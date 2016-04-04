@@ -22,7 +22,7 @@ ubuntu@ubuntu1404:~$ sudo apt-get update
 ubuntu@ubuntu1404:~$ sudo apt-get install -y mongodb-org
 ```
 
-#### 3. Or Install Previous Version, Ex : MongoDB 3.0.11
+#### 3. Or Install Previous Stable Version, Ex : MongoDB 3.0.11
 ```
 sudo apt-get install -y mongodb-org=3.0.11 mongodb-org-server=3.0.11 mongodb-org-shell=3.0.11 mongodb-org-mongos=3.0.11 mongodb-org-tools=3.0.11
 ```
