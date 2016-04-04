@@ -17,12 +17,7 @@ deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse
 ubuntu@ubuntu1404:~$ sudo apt-get update
 ```
 
-#### 2. Install MongoDB 3.2.X
+#### 2. Install MongoDB
 ```
 ubuntu@ubuntu1404:~$ sudo apt-get install -y mongodb-org
-```
-
-#### 3. Or Install Previous Stable Version, Ex : MongoDB 3.0.11
-```
-ubuntu@ubuntu1404:~$ sudo apt-get install -y mongodb-org=3.0.11 mongodb-org-server=3.0.11 mongodb-org-shell=3.0.11 mongodb-org-mongos=3.0.11 mongodb-org-tools=3.0.11
 ```
