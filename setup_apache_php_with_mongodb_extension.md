@@ -52,3 +52,19 @@ echo "<?php phpinfo();" > /var/www/html/info.php
 sudo a2enmod rewrite
 sudo service apache2 restart
 ```
+
+#### 9. Download composer, follow download instruction in [here](https://getcomposer.org/download/)
+
+#### 10. Add mongodb.so extension in /etc/php5/cli/php.ini
+```
+;;;;;;;;;;;;;;;;;;;;;;
+; Dynamic Extensions ;
+;;;;;;;;;;;;;;;;;;;;;;
+
+extension=/usr/lib/php5/20121212/mongodb.so
+```
+
+#### 11. Go to your project folder (ex: cd /var/www/html/Billionaire), then install
+```
+php composer.phar require "mongodb/mongodb=^1.0.0"
+```
