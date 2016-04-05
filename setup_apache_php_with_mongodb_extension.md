@@ -38,7 +38,16 @@ sudo chmod 777 /var/www/html/
 echo "<?php phpinfo();" > /var/www/html/info.php
 ```
 
-#### 7. Enable mod_rewrite and then restart Apache Service
+### 7. Edit /etc/apache2/apache.conf :
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All  
+        Require all granted  
+</Directory>
+```
+
+#### 8. Enable mod_rewrite and then restart Apache Service
 ```
 sudo a2enmod rewrite
 sudo service apache2 restart
