@@ -66,5 +66,16 @@ extension=/usr/lib/php5/20121212/mongodb.so
 
 #### 11. Go to your project folder (ex: cd /var/www/html/Billionaire), then install
 ```
-php composer.phar require "mongodb/mongodb=^1.0.0"
+$ php composer.phar require "mongodb/mongodb=^1.0.0"
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Installing mikey179/vfsstream (v1.1.0)
+    Downloading: 100%         
+
+  - Installing mongodb/mongodb (1.0.2)
+    Downloading: 100%         
+
+Writing lock file
+Generating autoload files
 ```
