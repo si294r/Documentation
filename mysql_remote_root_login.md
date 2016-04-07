@@ -1,6 +1,6 @@
 ### 1. Copy one data from user to temp table 
 ```
-MariaDB [mysql]> create table temp as select * from user where host = 'ubuntu1404';
+MariaDB [mysql]> create table temp as select * from user where user = 'root' limit 1;
 ```
 
 ### 2. Change host to allow remote login from All
