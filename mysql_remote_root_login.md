@@ -20,5 +20,5 @@ MariaDB [mysql]> flush privileges;
 
 ### 5. Clean Garbage
 ```
-MariaDB [mysql]> drop table temp
+MariaDB [mysql]> drop table temp;
 ```
