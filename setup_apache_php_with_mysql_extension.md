@@ -1,4 +1,4 @@
-#### Installation. Note: do not create database phpmyadmin, create manual using github script.
+#### Installation. Please do not create database phpmyadmin, we will create manual using github script.
 ```
 sudo apt-get update
 sudo apt-get install apache2 php5 php5-mysqlnd phpmyadmin
@@ -27,4 +27,4 @@ $dbname='mysql';
 $dbserver='10.128.0.2';
 ```
 
-#### create phpmyadmin database manual using github [script](https://github.com/si294r/phpmyadmin/blob/master/sql/create_tables.sql)
+#### create phpmyadmin database manual using github script [here](https://github.com/si294r/phpmyadmin/blob/master/sql/create_tables.sql)
