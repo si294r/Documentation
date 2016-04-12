@@ -18,5 +18,5 @@ sudo service mongod restart
 
 #### 4. Test Connection with mongo shell
 ```
-mongo --ssl --sslCAFile /etc/ssl/localcerts/thawte_ca.pem api.alegrium.com/test
+mongo --ssl --sslCAFile /etc/ssl/certs/thawte_Primary_Root_CA.pem api.alegrium.com/test
 ```
