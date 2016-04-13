@@ -7,7 +7,7 @@ LC_ALL="en_US.UTF-8"
 #### 2. Prepare apt-get, using PHP5.6
 ```
 sudo apt-get update
-sudo apt-get install python-software-properties
+sudo apt-get install python-software-properties software-properties-common
 sudo add-apt-repository ppa:ondrej/php5-5.6
 sudo apt-get update
 ```
