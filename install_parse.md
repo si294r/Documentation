@@ -82,5 +82,7 @@ sudo pm2 startup ubuntu -u parse --hp /home/parse/
 ```
 #### Test hello
 ```
-curl -X POST -H "X-Parse-Application-Id: your_application_id" -H "Content-Type: application/json" -d '{}' http://localhost:1337/parse/functions/hello
+curl -X POST -H "X-Parse-Application-Id: your_application_id" \
+     -H "Content-Type: application/json" -d '{}' \
+     http://localhost:1337/parse/functions/hello
 ```
