@@ -1,4 +1,4 @@
-#### Install Depedencies: NodeJS 5, NPM 3, Git 2, parse-server, PM2
+#### Installation: NodeJS 5, NPM 3, Git 2, parse-server, PM2
 Install NodeJS 5
 ```
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
@@ -82,7 +82,8 @@ sudo pm2 startup ubuntu -u parse --hp /home/parse/
 ```
 #### Test hello
 ```
-curl -X POST -H "X-Parse-Application-Id: your_application_id" \
+curl -X POST \
+     -H "X-Parse-Application-Id: your_application_id" \
      -H "Content-Type: application/json" -d '{}' \
      http://localhost:1337/parse/functions/hello
 ```
