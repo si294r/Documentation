@@ -2,16 +2,18 @@ Enable module proxy_http
 ```
 sudo a2enmod proxy proxy_http
 ```
-Edit file /etc/apache2/mods-available/proxy.conf
+Only allow Proxy to parse-server and parse-dashboard from https
+
+Edit file /etc/apache2/sites-available/default-ssl.conf
 ```
 ...
+        DocumentRoot /var/www/html
+
         ProxyPass /parse http://localhost:1337/parse
         ProxyPassReverse /parse http://localhost:1337/parse
 
         ProxyPass /dashboard http://localhost:4040/dashboard
         ProxyPassReverse /dashboard http://localhost:4040/dashboard
-
-        #ProxyRequests On
 ...
 ```
 Restart apache
