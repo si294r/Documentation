@@ -1,6 +1,6 @@
 Edit file /etc/apache2/sites-available/000-default.conf
 ```
 ...
-Redirect permanent / https://api.alegrium.com/
+Redirect permanent / https://server-example/
 ...
 ```
