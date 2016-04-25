@@ -2,7 +2,7 @@ Enable module proxy_http
 ```
 sudo a2enmod proxy proxy_http
 ```
-Only allow Proxy to parse-server and parse-dashboard from https
+Only allow Proxy to parse-server and parse-dashboard from https, get certificate from [letsencrypt](https://letsencrypt.org/)
 
 Edit file /etc/apache2/sites-available/default-ssl.conf
 ```
