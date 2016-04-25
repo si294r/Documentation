@@ -1,6 +1,6 @@
-Enable module proxy_html
+Enable module proxy_http
 ```
-sudo a2enmod proxy proxy_html
+sudo a2enmod proxy proxy_http
 ```
 Edit file /etc/apache2/mods-available/proxy.conf
 ```
