@@ -105,6 +105,39 @@ Edit /usr/lib/node_modules/parse-server/lib/cli/parse-server.js, and add HOST co
 var server = app.listen(options.port, process.env.HOST || '0.0.0.0', function () {
 ...
 ```
+#### Setup file adapter using S3 Amazon (Optional)
+Add config in env :
+```
+    "env": {
+      ....
+      "PARSE_SERVER_FILES_ADAPTER": "parse-server-s3-adapter",
+      "S3_ACCESS_KEY": "#########",
+      "S3_SECRET_KEY": "#########",
+      "S3_BUCKET": "my-bucket-parse-development",
+      ....
+    }
+```
+Edit /usr/lib/node_modules/parse-server/lib/cli/parse-server.js, add 'create S3Adapter object if FILES_ADAPTER is S3' code
+```
+...
+if (!options.appId || !options.masterKey || !options.serverURL) {
+  ...
+}
+
+// create S3Adapter object if FILES_ADAPTER is S3
+if ('parse-server-s3-adapter' == process.env.PARSE_SERVER_FILES_ADAPTER) {
+  options.filesAdapter = new _index.S3Adapter({
+        accessKey: process.env.S3_ACCESS_KEY || '',
+        secretKey: process.env.S3_SECRET_KEY || '',
+        bucket: process.env.S3_BUCKET || '',
+        region: process.env.S3_REGION || ''
+  });
+}
+
+var app = (0, _express2.default)();
+var api = new _index.ParseServer(options);
+...
+```
 #### Start parse-server as daemon
 ```
 pm2 start ecosystem.json
