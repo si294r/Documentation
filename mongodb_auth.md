@@ -65,5 +65,7 @@ Successfully added user: {
 
 #### 6. Example Add 'show dbs' access to user
 ```
+> use BillionaireX
+switched to db BillionaireX
 > db.grantRolesToUser("billionaire", [{ role: "readAnyDatabase", db: "admin" }]);
 ```
