@@ -79,7 +79,7 @@ $ sudo su -
 
 #### 13. Install MongoDB Library from Composer
 ```
-$ php composer.phar require "mongodb/mongodb=^1.0.0"
+$ php5 composer.phar require "mongodb/mongodb=^1.0.0"
 ./composer.json has been updated
 Loading composer repositories with package information
 Updating dependencies (including require-dev)
