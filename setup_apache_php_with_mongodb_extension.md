@@ -7,14 +7,14 @@ LC_ALL="en_US.UTF-8"
 #### 2. Prepare apt-get, using PHP5.6
 ```
 sudo apt-get update
-sudo apt-get install python-software-properties software-properties-common
+sudo apt-get install -y python-software-properties software-properties-common
 sudo add-apt-repository ppa:ondrej/php5-5.6
 sudo apt-get update
 ```
 
 #### 3. Install Apache2, PHP5, and all dependencies
 ```
-sudo apt-get install apache2 php5 php5-dev php-pear libsasl2-dev libpcre3-dev
+sudo apt-get install -y apache2 php5 php5-dev php-pear libsasl2-dev libpcre3-dev
 ```
 
 #### 4. Make symlink to fix configure: error: Cannot find OpenSSL's libraries
