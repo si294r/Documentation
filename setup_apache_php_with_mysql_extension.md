@@ -1,7 +1,7 @@
 #### Installation. Please do not create database phpmyadmin, we will create manual using github script.
 ```
 sudo apt-get update
-sudo apt-get install apache2 php5 php5-mysqlnd phpmyadmin
+sudo apt-get install -y apache2 php5 php5-mysqlnd phpmyadmin
 ```
 
 #### enable mod-rewrite :
