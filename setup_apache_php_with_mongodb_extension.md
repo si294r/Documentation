@@ -1,4 +1,4 @@
-#### 1. Add "LC_ALL" in /etc/default/locale
+#### 1. Add "LC_ALL" in /etc/default/locale, try reset session (logout-login) if failed install php
 ```
 LANG="en_US.UTF-8"
 LC_ALL="en_US.UTF-8"
