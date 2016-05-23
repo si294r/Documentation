@@ -47,7 +47,7 @@ sudo chmod 777 /var/www/html/
 echo "<?php phpinfo();" > /var/www/html/info.php
 ```
 
-#### 8. Edit /etc/apache2/apache.conf :
+#### 8. Edit /etc/apache2/apache2.conf :
 ```
 <Directory /var/www/>
         Options Indexes FollowSymLinks
