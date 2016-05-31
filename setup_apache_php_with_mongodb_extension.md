@@ -32,22 +32,23 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
 sudo pecl install mongodb
 ```
 
-#### 6. Add mongodb.so extension in /etc/php5/apache2/php.ini
+#### 6. Create file mongodb.ini in /etc/php5/mods-available/mongodb.ini
 ```
-;;;;;;;;;;;;;;;;;;;;;;
-; Dynamic Extensions ;
-;;;;;;;;;;;;;;;;;;;;;;
-
 extension=/usr/lib/php5/20131226/mongodb.so
 ```
 
-#### 7. Create phpinfo to cek installation
+#### 7. Enable mongodb
+```
+sudo php5enmod mongodb
+```
+
+#### 8. Create phpinfo to cek installation
 ```
 sudo chmod 777 /var/www/html/
 echo "<?php phpinfo();" > /var/www/html/info.php
 ```
 
-#### 8. Edit /etc/apache2/apache2.conf :
+#### 9. Edit /etc/apache2/apache2.conf :
 ```
 <Directory /var/www/>
         Options Indexes FollowSymLinks
@@ -56,19 +57,10 @@ echo "<?php phpinfo();" > /var/www/html/info.php
 </Directory>
 ```
 
-#### 9. Enable mod_rewrite and then restart Apache Service
+#### 10. Enable mod_rewrite and then restart Apache Service
 ```
 sudo a2enmod rewrite
 sudo service apache2 restart
-```
-
-#### 10. Add mongodb.so extension in /etc/php5/cli/php.ini
-```
-;;;;;;;;;;;;;;;;;;;;;;
-; Dynamic Extensions ;
-;;;;;;;;;;;;;;;;;;;;;;
-
-extension=/usr/lib/php5/20131226/mongodb.so
 ```
 
 #### 11. Change login as superuser
