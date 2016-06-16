@@ -1,12 +1,12 @@
 #### Edit file /etc/apache2/mods-enabled/mpm_prefork.conf 
 ```
 <IfModule mpm_prefork_module>
-	StartServers			 5
-	MinSpareServers		  5
-	MaxSpareServers		 10
-	MaxRequestWorkers	  500   # modified
-	MaxConnectionsPerChild   0
-  ServerLimit              500   # modified
+	StartServers		5
+	MinSpareServers		5
+	MaxSpareServers		10
+	MaxRequestWorkers	900   # modified
+	MaxConnectionsPerChild  0
+	ServerLimit             900   # modified
 </IfModule>
 ```
 
