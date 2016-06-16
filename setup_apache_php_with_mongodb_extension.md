@@ -83,3 +83,26 @@ Updating dependencies (including require-dev)
 Writing lock file
 Generating autoload files
 ```
+
+#### 14. Warning !!!!
+```
+This PPA is deprecated!
+
+Please note that this PPA is deprecated and it's being replaced with ppa:ondrej/php that contains co-installable versions of PHP 5.5, PHP 5.6 and PHP 7.0.
+
+This PPA will reach end of life at the end of June 2016, and you have to replace it with the new centralized PHP PPA.
+
+To add the new PPA, do:
+        sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+        sudo apt-get update
+
+And the install correct PHP version:                                                                                   
+
+        sudo apt-get install php7.0 # for PHP 7.0
+        sudo apt-get install php5.6 # for PHP 5.6
+        sudo apt-get install php5.5 # for PHP 5.5
+
+The packages for extensions contain modules for all supported PHP versions and can be installed with (f.e. xdebug and APCu):
+
+        sudo apt-get install php-xdebug php-apcu     
+```
