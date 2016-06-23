@@ -32,8 +32,7 @@ sudo ln -s /etc/php/5.6/mods-available/mongodb.ini /etc/php/5.6/cli/conf.d/
 ```
 #### Create phpinfo to cek installation
 ```
-sudo mkdir /var/www
-sudo mkdir /var/www/html
+sudo mkdir -p /var/www/html
 sudo chmod 777 /var/www/html/
 echo "<?php phpinfo();" > /var/www/html/info.php
 ```
