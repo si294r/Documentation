@@ -41,3 +41,12 @@ echo "<?php phpinfo();" > /var/www/html/info.php
 ```
 php5.6 composer.phar require "mongodb/mongodb=^1.0.0"
 ```
+#### Edit file /etc/php/5.6/fpm/php.ini
+```
+cgi.fix_pathinfo=0
+```
+#### Run php fpm for the first time
+```
+sudo service php5.6-fpm start
+```
+```
