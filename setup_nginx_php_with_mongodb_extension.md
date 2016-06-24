@@ -76,6 +76,13 @@ sudo service php5.6-fpm start
                 fastcgi_index index.php;
                 include fastcgi_params;
         }
+        
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        location ~ /\.ht {
+                deny all;
+        }
 ```
 #### Start service nginx
 ```
