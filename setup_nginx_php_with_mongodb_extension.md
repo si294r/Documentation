@@ -45,8 +45,39 @@ php5.6 composer.phar require "mongodb/mongodb=^1.0.0"
 ```
 cgi.fix_pathinfo=0
 ```
-#### Run php fpm for the first time
+#### Start service php-fpm
 ```
 sudo service php5.6-fpm start
 ```
+#### Edit file /etc/nginx/sites-enabled/default
+```
+        #root /usr/share/nginx/html;
+        root /var/www/html;
+....
+        error_page 404 /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+                root /usr/share/nginx/html;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ \.php$ {
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        #       # NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+        #
+        #       # With php5-cgi alone:
+        #       fastcgi_pass 127.0.0.1:9000;
+        #       # With php5-fpm:
+                fastcgi_pass unix:/var/run/php/php5.6-fpm.sock;
+                fastcgi_index index.php;
+                include fastcgi_params;
+        }
+```
+#### Start service nginx
+```
+sudo service nginx start
 ```
