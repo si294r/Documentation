@@ -88,3 +88,9 @@ sudo service php5.6-fpm start
 ```
 sudo service nginx start
 ```
+#### Example Code Igniter Rewrite Rule
+```
+        location /UADashboard {
+                rewrite ^/UADashboard/((?!assets).*)$ /UADashboard/index.php?$1 last;
+        }
+```
