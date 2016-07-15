@@ -106,6 +106,10 @@ var server = app.listen(options.port, process.env.HOST || '0.0.0.0', function ()
 ...
 ```
 #### Setup file adapter using S3 Amazon (Optional)
+Install S3 Adapter
+```
+sudo npm install -g parse-server-s3-adapter
+```
 Add config in env :
 ```
     "env": {
