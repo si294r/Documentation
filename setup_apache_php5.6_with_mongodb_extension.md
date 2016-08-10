@@ -1,24 +1,24 @@
-#### 1. Add "LC_ALL" in /etc/default/locale, try reset session (logout-login) if failed install php
-```
-LANG="en_US.UTF-8"
-LC_ALL="en_US.UTF-8"
-```
-
-#### 2. Prepare apt-get, using PHP5.6
+#### Prepare apt-get, using PHP5.6
 ```
 sudo apt-get update
 sudo apt-get install -y python-software-properties software-properties-common
 sudo apt-get install -y language-pack-en-base
-sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php5-5.6
+sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 sudo apt-get update
 ```
 
-#### 3. Install Apache2, PHP5, and all dependencies
+#### Prepare git
 ```
-sudo apt-get install -y apache2 php5 php5-curl php5-dev php-pear libsasl2-dev libpcre3-dev
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update && sudo apt-get -y install git
 ```
 
-#### 4. Make symlink to fix configure: error: Cannot find OpenSSL's libraries
+#### Install Apache2, PHP5.6, and all dependencies
+```
+sudo apt-get install -y apache2 php5.6 php5.6-curl php5.6-dev php5.6-xml php-pear libsasl2-dev libpcre3-dev
+```
+
+#### Make symlink to fix configure: error: Cannot find OpenSSL's libraries
 ```
 sudo mkdir -p /usr/local/openssl/include/openssl/
 sudo ln -s /usr/include/openssl/evp.h /usr/local/openssl/include/openssl/evp.h
@@ -27,82 +27,49 @@ sudo ln -s /usr/lib/x86_64-linux-gnu/libssl.a /usr/local/openssl/lib/libssl.a
 sudo ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
 ```
 
-#### 5. Install php mongodb extension from pecl
+#### Install php mongodb extension from pecl
 ```
 sudo pecl install mongodb
 ```
 
-#### 6. Create file mongodb.ini in /etc/php5/mods-available/mongodb.ini
+#### Create file mongodb.ini in /etc/php/5.6/mods-available/mongodb.ini
 ```
-extension=/usr/lib/php5/20131226/mongodb.so
-```
-
-#### 7. Enable mongodb
-```
-sudo php5enmod mongodb
+extension=/usr/lib/php/20131226/mongodb.so
 ```
 
-#### 8. Create phpinfo to cek installation
+#### Enable mongodb
+```
+sudo phpenmod mongodb
+```
+
+#### Create phpinfo to cek installation
 ```
 sudo chmod 777 /var/www/html/
 echo "<?php phpinfo();" > /var/www/html/info.php
 ```
 
-#### 9. Edit /etc/apache2/apache2.conf :
-```
-<Directory /var/www/>
-        Options Indexes FollowSymLinks
-        AllowOverride All  
-        Require all granted  
-</Directory>
-```
-
-#### 10. Enable mod_rewrite and then restart Apache Service
-```
-sudo a2enmod rewrite
-sudo service apache2 restart
-```
-
-#### 11. Change login as superuser
+#### Change login as superuser
 ```
 $ sudo su -
 ```
 
-#### 12. Go to folder /var/www/ then download composer, follow download instruction in [here](https://getcomposer.org/download/)
+#### Go to folder /var/www/ then download composer, follow download instruction in [here](https://getcomposer.org/download/)
 
-#### 13. Install MongoDB Library from Composer
+#### Install MongoDB Library from Composer
 ```
-$ php5 composer.phar require "mongodb/mongodb=^1.0.0"
-./composer.json has been updated
+$ php5.6 composer.phar require "mongodb/mongodb=^1.0.0"
+Do not run Composer as root/super user! See https://getcomposer.org/root for details
+./composer.json has been created
 Loading composer repositories with package information
 Updating dependencies (including require-dev)
-
+    Failed to download mongodb/mongodb from dist: The zip extension and unzip command are both missing, skipping.
+The php.ini used by your command-line PHP is: /etc/php/5.6/cli/php.ini
+    Now trying to download from source
   - Installing mongodb/mongodb (1.0.2)
-    Downloading: 100%         
+    Cloning faf8a1d86b5c10684ef91fa6c81475b0c7f95240 from cache
 
 Writing lock file
 Generating autoload files
 ```
 
-#### 14. Warning !!!!
-```
-This PPA is deprecated!
 
-Please note that this PPA is deprecated and it's being replaced with ppa:ondrej/php that contains co-installable versions of PHP 5.5, PHP 5.6 and PHP 7.0.
-
-This PPA will reach end of life at the end of June 2016, and you have to replace it with the new centralized PHP PPA.
-
-To add the new PPA, do:
-        sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
-        sudo apt-get update
-
-And the install correct PHP version:                                                                                   
-
-        sudo apt-get install php7.0 # for PHP 7.0
-        sudo apt-get install php5.6 # for PHP 5.6
-        sudo apt-get install php5.5 # for PHP 5.5
-
-The packages for extensions contain modules for all supported PHP versions and can be installed with (f.e. xdebug and APCu):
-
-        sudo apt-get install php-xdebug php-apcu     
-```
