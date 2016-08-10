@@ -1,3 +1,5 @@
+DEPRECATED please use [new readme](https://github.com/si294r/Documentation-Ubuntu14.04/blob/master/setup_apache_php5.6_with_mongodb_extension.md)
+
 #### 1. Add "LC_ALL" in /etc/default/locale, try reset session (logout-login) if failed install php
 ```
 LANG="en_US.UTF-8"
