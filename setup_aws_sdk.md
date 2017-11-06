@@ -11,3 +11,8 @@ service php5.6-fpm restart
 ```
 php5.6 composer.phar require "aws/aws-sdk-php=2.*"
 ```
+
+#### Install AWS SDK PHP 3.x, will automatic remove version 2.x
+```
+php5.6 composer.phar require "aws/aws-sdk-php=3.*"
+```
